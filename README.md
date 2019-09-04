@@ -26,6 +26,18 @@ for **CIModuleTests**:
 
 See the provided [composer.json](src/composer.json) for examples.
 
+## Customizing
+
+The **_support** directory comes loaded with easy-to-use examples of test cases and their
+support files, but you will probably want to modify or replace these with your own versions.
+There is no harm in leaving files in place you do not need.
+* **tests/_support/DatabaseTestCase.php**
+* **tests/_support/SessionTestCase.php**
+* **tests/_support/DatabaseTestCase.php**
+* **tests/_support/Database/Migrations/create_test_tables.php**
+* **tests/_support/Database/Seeds/ExampleSeeder.php**
+* **tests/_support/Models/ExampleModel.php**
+
 ## Creating Tests
 
 All tests go in the **tests/** directory. There are two generic subfolders for you,
@@ -79,3 +91,7 @@ Other common modifications would be removing the attributes from the whitelist e
 As this repo is updated with bugfixes and improvements you will want to update the code
 merged into your modules. Because tests need to be top-level and should not include their
 own repository info you will need to handle updates manually.
+
+If you added **CIModuleTests** to your package via Composer you can access the latest
+version by running `composer update` and merging files from
+**vendor/mgatner/ci-module-tests/src/** into your **tests/** directory.
