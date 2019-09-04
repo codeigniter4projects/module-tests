@@ -8,7 +8,7 @@ class ExampleDatabaseTest extends CIModuleTests\Support\DatabaseTestCase
 		
 	}
 
-	public function simpleDatabaseTest()
+	public function testDatabaseSimple()
 	{
 		$model = new \CIModuleTests\Support\Models\ExampleModel();
 

@@ -14,7 +14,7 @@ class DatabaseTestCase extends \CodeIgniter\Test\CIDatabaseTestCase
      *
      * @var string
      */
-    protected $seed = 'ExampleSeeder';
+    protected $seed = 'CIModuleTests\Support\Database\Seeds\ExampleSeeder';
 
     /**
      * The path to where we can find the test Seeds directory.

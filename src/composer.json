@@ -1,0 +1,47 @@
+{
+	"name": "mgatner/ci-module-tests",
+	"description": "Testing scaffold for PHPUnit tests in CodeIgniter 4",
+	"keywords": [
+		"codeigniter",
+		"codeigniter4",
+		"phpunit",
+		"tests",
+		"modules",
+		"coverage"
+	],
+	"homepage": "https://github.com/mgatner/ci-module-tests",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Matthew Gatner",
+			"email": "mgatner@tattersoftware.com",
+			"homepage": "https://tattersoftware.com",
+			"role": "Developer"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/codeigniter4/CodeIgniter4"
+		}
+	],
+	"require": {
+		"php" : ">=7.2"
+	},
+	"require-dev": {
+		"phpunit/phpunit" : "^7.0",
+		"mockery/mockery": "^1.0",
+		"codeigniter4/codeigniter4": "dev-develop"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"CIModuleTests\\Support\\": "tests/_support"
+		}
+	},
+	"scripts": {
+		"test": "phpunit",
+		"post-update-cmd": [
+			"composer dump-autoload"
+		]
+	}
+}

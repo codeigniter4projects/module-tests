@@ -8,7 +8,7 @@ class ExampleTest extends \CodeIgniter\Test\CIDatabaseTestCase
 		
 	}
 
-	public function simpleTest()
+	public function testSimple()
 	{
 		$test = defined('APPPATH');
 		$this->assertTrue($test);
