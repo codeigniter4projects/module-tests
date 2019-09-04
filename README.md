@@ -33,6 +33,7 @@ All tests go in the **tests/** directory. There are two generic subfolders for y
 test case:
 * For basic tests extend `CodeIgniter\Test\CIUnitTestCase`
 * For database tests extend `CIModuleTests\Support\DatabaseTestCase`
+* For session tests extend `CIModuleTests\Support\SessionTestCase`
 
 Tests are individual methods within each file. Method names must start with the word "test":
 `testUserSync()` `testOutputColor()` `testFooBar()`
@@ -50,3 +51,31 @@ steps in `setUp()`.
 
 Similarly there is a pre-configured test case available with a mock session configured to
 make testing sessions easy: **tests/_support/SessionTestCase.php**.
+
+## Code Coverage
+
+**CIModuleTests** comes preconfigured to run code coverage as part of the testing. You will
+need to have a code coverage driver installed to use this feature, such as
+[Xdebug](https://xdebug.org). **CIModuleTests** assumes your source code is in **src/**;
+if your code is somewhere else then modify the following line in **phpunit.xml.dist** :
+```
+<directory suffix=".php">./src</directory>
+```
+Other common modifications would be removing the attributes from the whitelist element:
+```
+<whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
+```
+... and adjusting the output location and format of the coverage reports:
+```
+<logging>
+	<log type="coverage-clover" target="build/logs/clover.xml"/>
+	<log type="coverage-html" target="build/logs/html"/>
+	<log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
+</logging>
+```
+
+## Updating
+
+As this repo is updated with bugfixes and improvements you will want to update the code
+merged into your modules. Because tests need to be top-level and should not include their
+own repository info you will need to handle updates manually.

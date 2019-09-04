@@ -10,7 +10,7 @@ $_SERVER['CI_ENVIRONMENT'] = 'testing';
 define('ENVIRONMENT', 'testing');
 
 // Load our paths config file
-require __DIR__ . '/../vendor/codeigniter4/codeigniter4/app/Config/Paths.php';
+require __DIR__ . '/../../vendor/codeigniter4/codeigniter4/app/Config/Paths.php';
 $paths = new Config\Paths();
 
 // Define necessary framework path constants
@@ -21,9 +21,9 @@ define('SYSTEMPATH',    realpath($paths->systemDirectory) . DIRECTORY_SEPARATOR)
 define('WRITEPATH',     realpath($paths->writableDirectory) . DIRECTORY_SEPARATOR);
 
 // Define necessary module test path constants
-define('MODULEPATH',    realpath(__DIR__ . '/../') . DIRECTORY_SEPARATOR);
-define('TESTPATH',      realpath(__DIR__) . DIRECTORY_SEPARATOR);
-define('SUPPORTPATH',   realpath(TESTPATH . '_support/') . DIRECTORY_SEPARATOR);
+define('SUPPORTPATH',   realpath(__DIR__) . DIRECTORY_SEPARATOR);
+define('TESTPATH',      realpath(SUPPORTPATH . '../') . DIRECTORY_SEPARATOR);
+define('MODULEPATH',    realpath(__DIR__ . '/../../') . DIRECTORY_SEPARATOR);
 define('COMPOSER_PATH', MODULEPATH . 'vendor/autoload.php');
 
 // Set environment values that would otherwise stop the framework from functioning during tests.
