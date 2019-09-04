@@ -5,7 +5,6 @@ class ExampleDatabaseTest extends CIModuleTests\Support\DatabaseTestCase
 	public function setUp(): void
 	{
 		parent::setUp();
-		
 	}
 
 	public function testDatabaseSimple()

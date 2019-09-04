@@ -1,6 +1,6 @@
 <?php
 
-class ExampleTest extends \CodeIgniter\Test\CIDatabaseTestCase
+class ExampleTest extends \CodeIgniter\Test\CIUnitTestCase
 {
 	public function setUp(): void
 	{

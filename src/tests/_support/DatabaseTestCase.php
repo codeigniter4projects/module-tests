@@ -30,14 +30,8 @@ class DatabaseTestCase extends \CodeIgniter\Test\CIDatabaseTestCase
      */
     protected $namespace = 'CIModuleTests\Support';
 
-    /**
-     * @var SessionHandler
-     */
-    protected $session;
-
     public function setUp(): void
     {
         parent::setUp();
-        
     }
 }

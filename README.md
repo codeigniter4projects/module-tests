@@ -31,13 +31,13 @@ See the provided [composer.json](src/composer.json) for examples.
 All tests go in the **tests/** directory. There are two generic subfolders for you,
 **unit** and **database** but feel free to make your own. Tests must extend the appropriate
 test case:
-* For basic tests extend `CodeIgniter\Test\CIDatabaseTestCase`
+* For basic tests extend `CodeIgniter\Test\CIUnitTestCase`
 * For database tests extend `CIModuleTests\Support\DatabaseTestCase`
 
 Tests are individual methods within each file. Method names must start with the word "test":
 `testUserSync()` `testOutputColor()` `testFooBar()`
 
-## Database Tests
+### Database Tests
 
 If you are using database tests that require a live database connect you will need to edit
 **phpunit.xml.dist**, uncomment the database configuration lines and add your connection
@@ -45,3 +45,8 @@ details. Example directories and files are provided for test Seeds and Models, w
 can modify or replace with your own. Also be sure to modify
 **tests/_support/DatabaseTestCase.php** to point to your seed and include any additional
 steps in `setUp()`.
+
+### Session Tests
+
+Similarly there is a pre-configured test case available with a mock session configured to
+make testing sessions easy: **tests/_support/SessionTestCase.php**.
