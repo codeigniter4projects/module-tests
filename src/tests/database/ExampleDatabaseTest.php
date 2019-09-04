@@ -12,7 +12,7 @@ class ExampleDatabaseTest extends CIModuleTests\Support\DatabaseTestCase
 		$model = new \CIModuleTests\Support\Models\ExampleModel();
 
 		$objects = $model->findAll();
-		
+
 		$this->assertCount(3, $objects);
 	}
 }
