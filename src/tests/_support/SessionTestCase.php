@@ -3,7 +3,7 @@
 use CodeIgniter\Session\Handlers\ArrayHandler;
 use Tests\Support\Session\MockSession;
 
-class SessionTestCase extends \CodeIgniter\Test\CIDatabaseTestCase
+class SessionTestCase extends \CodeIgniter\Test\CIUnitTestCase
 {
     /**
      * @var SessionHandler
