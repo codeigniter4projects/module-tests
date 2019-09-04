@@ -11,7 +11,7 @@ class ExampleSessionTest extends CIModuleTests\Support\SessionTestCase
 	{
 		$this->session->set('logged_in', 123);
 
-		$value = $this->session->get('logged_in')
+		$value = $this->session->get('logged_in');
 		
 		$this->assertEquals(123, $value);
 	}
