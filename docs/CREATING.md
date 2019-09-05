@@ -8,7 +8,7 @@
 ## Test Cases
 
 Every test needs a *test case*, or class that your tests extend. CodeIgniter 4
-provides a few you may use directly:
+provides a few that you may use directly:
 * `CodeIgniter\Test\CIUnitTestCase` - for basic tests with no other service needs
 * `CodeIgniter\Test\CIDatabaseTestCase` - for tests that need database access
 
@@ -22,22 +22,25 @@ common to your test suites.
 ## Tests
 
 All tests go in the **tests/** directory. **ci-module-tests** provides two generic
-subfolders for you **unit** and **database** but feel free to make your own. Each test file
-is a class that extends a **Test Case** (see above) and contains methods for each individual
-test. These method names must start with the word "test" and should have descriptive names
+subfolders for you, **unit** and **database** - but feel free to make your own. Each test file
+is a class that extends a **Test Case** (see above) and contains methods for the individual
+tests. These method names must start with the word "test" and should have descriptive names
 for precisely what they are testing: `testUserCanModifyFile()` `testOutputColorMatchesInput()`
 `testIsLoggedInFailsWithInvalidUser()`
 
+Writing tests is an art, and there are many resources available to help learn how. Review
+the links above and always pay attention to your [Code Coverage](docs/COVERAGE.md).
+
 ### Database Tests
 
-**ci-module-tests** provides a examples for migrating, seeding, and testing against a mock
+**ci-module-tests** provides examples for migrating, seeding, and testing against a mock
 or live<sup>1</sup> database. The example files can be modified or replaced with your own:
 * **tests/_support/Database/Migrations/create_test_tables.php**
 * **tests/_support/Database/Seeds/ExampleSeeder.php**
 * **tests/_support/Models/ExampleModel.php**
 
 Be sure to modify the test case (or create your own) to point to your seed and migrations
-and include any additional steps in `setUp()`:
+and include any additional steps to be run before tests in the `setUp()` method:
 * **tests/_support/DatabaseTestCase.php**
 
 <sup>1</sup> Note: If you are using database tests that require a live database connection you will need
@@ -47,6 +50,7 @@ repo by adding it to **.gitignore**.
 
 ### Session Tests
 
-Similar to the database test case, **ci-module-tests** provides a test case pre-configured
-with the mock session class to make testing sessions easy:
+Similar to database testing, **ci-module-tests** provides a test case pre-configured
+with the [mock session class](https://codeigniter4.github.io/userguide/testing/overview.html#mocking-services)
+to make testing sessions easier:
 * **tests/_support/SessionTestCase.php**

@@ -1,7 +1,7 @@
 # Code Coverage
 
->> Code coverage is a term used in software testing to describe how much program source
->> code is covered by a testing plan. -[TechnoPedia](https://www.techopedia.com/definition/22535/code-coverage)
+> Code coverage is a term used in software testing to describe how much program source
+> code is covered by a testing plan. -[TechnoPedia](https://www.techopedia.com/definition/22535/code-coverage)
 
 ## Overview
 
@@ -24,13 +24,13 @@ Common practice is to create a local copy of this file as **phpunit.xml** and ad
 sensitive or environment info (like database connections). Prevent **phpunit.xml** from
 being tracked in your repo by adding it to **.gitignore**.
 
->> PHPUnit will always use **phpunit.xml** before **phpunit.xml.dist**, if it is found.
+> PHPUnit will always use **phpunit.xml** before **phpunit.xml.dist**, if it is found.
 
 ### Exclusions
 
 In addition to the code source mentioned above, PHPUnit can be configured to exclude files
 that are not relevant to testing or would otherwise cause the coverage calculations to fail.
-**ci4-module-tests** provides a few files common to CodeIgniter 4 but you may need to add
+**ci4-module-tests** starts with a few files common to CodeIgniter 4 but you may need to add
 your own:
 ```
 	<exclude>
@@ -41,7 +41,9 @@ your own:
 
 ### Logging
 
-Another common change is adjusting the output location and format of the coverage reports:
+Output is available in a variety of formats (see the [Logging Section](https://phpunit.readthedocs.io/en/8.3/logging.html)
+of the PHPUnit Guide). You can adjust the default location and format of the reports by
+modifying the `<logging>` tag:
 ```
 	<logging>
 		<log type="coverage-html" target="build/logs/html"/>
@@ -54,8 +56,6 @@ Another common change is adjusting the output location and format of the coverag
 	</logging>
 ```
 
-To read more on logging and options see the
-[Loggin Section](https://phpunit.readthedocs.io/en/8.3/logging.html) of the PHPUnit Guide.
-
 For more information on using the PHPUnit XML file generally see the
-[Configuration Section](https://phpunit.readthedocs.io/en/8.3/configuration.html) of the guide.
+[Configuration Section](https://phpunit.readthedocs.io/en/8.3/configuration.html)
+of the guide.
