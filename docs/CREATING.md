@@ -12,7 +12,7 @@ provides a few that you may use directly:
 * `CodeIgniter\Test\CIUnitTestCase` - for basic tests with no other service needs
 * `CodeIgniter\Test\CIDatabaseTestCase` - for tests that need database access
 
-**ci-module-tests** also provides some examples:
+**ci4-module-tests** also provides some examples:
 * `CIModuleTests\Support\DatabaseTestCase` - for database tests, pre-configured for migrations, seeds, and models from **tests/_support**
 * `CIModuleTests\Support\SessionTestCase` - for session tests, pre-configured with a mock session driver
 
@@ -21,7 +21,7 @@ common to your test suites.
 
 ## Tests
 
-All tests go in the **tests/** directory. **ci-module-tests** provides two generic
+All tests go in the **tests/** directory. **ci4-module-tests** provides two generic
 subfolders for you, **unit** and **database** - but feel free to make your own. Each test file
 is a class that extends a **Test Case** (see above) and contains methods for the individual
 tests. These method names must start with the word "test" and should have descriptive names
@@ -50,7 +50,7 @@ repo by adding it to **.gitignore**.
 
 ### Session Tests
 
-Similar to database testing, **ci-module-tests** provides a test case pre-configured
+Similar to database testing, **ci4-module-tests** provides a test case pre-configured
 with the [mock session class](https://codeigniter4.github.io/userguide/testing/overview.html#mocking-services)
 to make testing sessions easier:
 * **tests/_support/SessionTestCase.php**
