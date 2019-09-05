@@ -26,13 +26,13 @@
     </filter>
     
     <logging>
-        <log type="coverage-html" target="build/logs/html"/>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-        <log type="coverage-php" target="build/logs/coverage.serialized"/>
+		<log type="coverage-html" target="build/logs/html"/>
+		<log type="coverage-clover" target="build/logs/clover.xml"/>
+		<log type="coverage-php" target="build/logs/coverage.serialized"/>
 		<log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
-        <log type="testdox-html" target="build/logs/testdox.html"/>
-        <log type="testdox-text" target="build/logs/testdox.txt"/>
-        <log type="junit" target="build/logs/logfile.xml"/>
+		<log type="testdox-html" target="build/logs/testdox.html"/>
+		<log type="testdox-text" target="build/logs/testdox.txt"/>
+		<log type="junit" target="build/logs/logfile.xml"/>
     </logging>
 
     <php>

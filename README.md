@@ -1,108 +1,76 @@
 # ci4-module-tests
-Testing scaffold for PHPUnit tests in CodeIgniter 4
+
+PHPUnit testing scaffold for CodeIgniter 4 modules
 
 ## Overview
 
-**CIModuleTests** is intended to be integrated into third-party modules for CodeIgniter 4.
-It provides a scaffold and basic examples of how to perform module testing dependent on the
-framework without being integrated into a specific project.
+Not a module itself but a testing scaffold for CodeIgniter 4 modules,
+**ci4-module-tests** makes it easy to setup PHPUnit tests in your modules.
 
-For more on Testing in CodeIgniter 4 visit the
-[User Guide](https://codeigniter4.github.io/CodeIgniter4/testing/).
+To read more on Unit Testing in CodeIgniter 4 visit the
+[User Guide](https://codeigniter4.github.io/userguide/testing/index.html).
 
 ## Installation
 
-### New Projects
-
-1. Clone this repo and merge the all files from **src/** into the root of your module. 
-2. From your package root run `composer install` to install all the required support packages.
-3. Start your module code in **src/** and add your namespace to **composer.json**'s `autoload`
-4. Run `composer test` to initiate the tests.
-
-### Existing Projects
-
-Unless you are starting fresh you likely will already have your own versions of some of the
-package files in **src/**. In this case you will need to be sure to merge some necessary
-settings for **CIModuleTests**. In **composer.json**:
-* `repositories` needs an entry for `https://github.com/codeigniter4/CodeIgniter4`
-* `require-dev` needs the CodeIgniter 4 repo, PHPUnit, and Mockery
-* `autoload-dev` must supply the PSR4 namespace for the test supports
-See the provided [composer.json](src/composer.json) for examples.
-
-Also review **src/.gitignore** for helpful additions so you don't track test results.
-
-### phpunit.xml
-
-**src/** includes a ready-to-use PHPUnit template in **phpunit.xml.dist**. You can keep this
-as is but if you plan to add environment info (like database connections) be sure to rename
-it to **phpunit.xml** and prevent it from being tracked via **.gitignore**.
-
-## Customizing
-
-The **_support** directory comes loaded with easy-to-use examples of test cases and their
-support files, but you will probably want to modify or replace these with your own versions.
-There is no harm in leaving files in place you do not need.
-* **tests/_support/DatabaseTestCase.php**
-* **tests/_support/SessionTestCase.php**
-* **tests/_support/DatabaseTestCase.php**
-* **tests/_support/Database/Migrations/create_test_tables.php**
-* **tests/_support/Database/Seeds/ExampleSeeder.php**
-* **tests/_support/Models/ExampleModel.php**
-
-## Creating Tests
-
-All tests go in the **tests/** directory. There are two generic subfolders for you,
-**unit** and **database** but feel free to make your own. Tests must extend the appropriate
-test case:
-* For basic tests extend `CodeIgniter\Test\CIUnitTestCase`
-* For database tests extend `CIModuleTests\Support\DatabaseTestCase`
-* For session tests extend `CIModuleTests\Support\SessionTestCase`
-
-Tests are individual methods within each file. Method names must start with the word "test":
-`testUserSync()` `testOutputColor()` `testFooBar()`
-
-### Database Tests
-
-If you are using database tests that require a live database connect you will need to
-rename **phpunit.xml.dist** to **phpunit.xml**, uncomment the database configuration lines
-and add your connection details. Example directories and files are provided for test Seeds
-and Models, which you can modify or replace with your own. Also be sure to modify
-**tests/_support/DatabaseTestCase.php** to point to your seed and include any additional
-steps in `setUp()`.
-
-### Session Tests
-
-Similarly there is a pre-configured test case available with a mock session configured to
-make testing sessions easy: **tests/_support/SessionTestCase.php**.
-
-## Code Coverage
-
-**CIModuleTests** comes preconfigured to run code coverage as part of the testing. You will
-need to have a code coverage driver installed to use this feature, such as
-[Xdebug](https://xdebug.org). **CIModuleTests** assumes your source code is in **src/**;
-if your code is somewhere else then modify the following line in **phpunit.xml.dist** :
+Clone or download this repo and place **src/tests** and **src/phpunit.xml.dist** in your
+project root. Add the following lines to **composer.json**:
 ```
-<directory suffix=".php">./src</directory>
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/codeigniter4/CodeIgniter4"
+		}
+	],
+	"minimum-stability": "dev",
+	"require-dev": {
+		"phpunit/phpunit" : "^7.0",
+		"mockery/mockery": "^1.0",
+		"codeigniter4/codeigniter4": "dev-develop"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"CIModuleTests\\Support\\": "tests/_support"
+		}
+	},
+	"scripts": {
+		"test": "phpunit",
+		"post-update-cmd": [
+			"composer dump-autoload"
+		]
+	}
 ```
-Other common modifications would be removing the attributes from the whitelist element:
+
+If you are using version tracking you should exclude test results by adding this to
+**.gitignore**:
 ```
-<whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
+vendor/
+build/
+phpunit*.xml
+phpunit
+composer.lock
 ```
-... and adjusting the output location and format of the coverage reports:
-```
-<logging>
-	<log type="coverage-clover" target="build/logs/clover.xml"/>
-	<log type="coverage-html" target="build/logs/html"/>
-	<log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
-</logging>
-```
+
+Examples of **composer.json** and **.gitignore** are located in the [examples/](examples/)
+folder if you need a starting point.
 
 ## Updating
 
-As this repo is updated with bugfixes and improvements you will want to update the code
-merged into your modules. Because tests need to be top-level and should not include their
-own repository info you will need to handle updates manually.
+As this repo is updated with bugfixes and improvements you will want to update your
+modules that use it. Because files need to be copied in place manually you will have to
+handle updates manually by cloning or downloading this repo and merging changed files
+into your project. "Watch" this repo to be notified of new releases and changes.
 
-If you added **CIModuleTests** to your package via Composer you can access the latest
-version by running `composer update` and merging files from
-**vendor/mgatner/ci-module-tests/src/** into your **tests/** directory.
+## Creating Tests
+
+See the docs on [Creating Tests](docs/CREATING.md).
+
+## Running Tests
+
+From your package root run `composer install` (or `composer upgrade`) to install all the
+required support packages, then run `composer test` to initiate the tests. Test results
+and code coverage will be written to standard output and formatted log versions will go
+in **build/logs/**.
+
+## Code Coverage
+
+See the docs on [Code Coverage](docs/COVERAGE.md).
