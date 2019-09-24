@@ -1,6 +1,6 @@
 <?php
 
-class ExampleDatabaseTest extends CIModuleTests\Support\DatabaseTestCase
+class ExampleDatabaseTest extends ModuleTests\Support\DatabaseTestCase
 {
 	public function setUp(): void
 	{
@@ -9,7 +9,7 @@ class ExampleDatabaseTest extends CIModuleTests\Support\DatabaseTestCase
 
 	public function testDatabaseSimple()
 	{
-		$model = new \CIModuleTests\Support\Models\ExampleModel();
+		$model = new \ModuleTests\Support\Models\ExampleModel();
 
 		$objects = $model->findAll();
 

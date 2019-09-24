@@ -1,11 +1,11 @@
-# ci4-module-tests
+# ModuleTests
 
 PHPUnit testing scaffold for CodeIgniter 4 modules
 
 ## Overview
 
 Not a module itself but a testing scaffold for CodeIgniter 4 modules,
-**ci4-module-tests** makes it easy to setup PHPUnit tests in your modules.
+**module-tests** makes it easy to setup PHPUnit tests in your modules.
 
 To read more on Unit Testing in CodeIgniter 4 visit the
 [User Guide](https://codeigniter4.github.io/userguide/testing/index.html).
@@ -29,7 +29,7 @@ project root. Add the following lines to **composer.json**:
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"CIModuleTests\\Support\\": "tests/_support"
+			"ModuleTests\\Support\\": "tests/_support"
 		}
 	},
 	"scripts": {

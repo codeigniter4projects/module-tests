@@ -1,4 +1,4 @@
-<?php namespace CIModuleTests\Support;
+<?php namespace ModuleTests\Support;
 
 class DatabaseTestCase extends \CodeIgniter\Test\CIDatabaseTestCase
 {
@@ -14,7 +14,7 @@ class DatabaseTestCase extends \CodeIgniter\Test\CIDatabaseTestCase
      *
      * @var string
      */
-    protected $seed = 'CIModuleTests\Support\Database\Seeds\ExampleSeeder';
+    protected $seed = 'ModuleTests\Support\Database\Seeds\ExampleSeeder';
 
     /**
      * The path to where we can find the test Seeds directory.
@@ -28,7 +28,7 @@ class DatabaseTestCase extends \CodeIgniter\Test\CIDatabaseTestCase
      *
      * @var string
      */
-    protected $namespace = 'CIModuleTests\Support';
+    protected $namespace = 'ModuleTests\Support';
 
     public function setUp(): void
     {
