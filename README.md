@@ -5,7 +5,7 @@ PHPUnit testing scaffold for CodeIgniter 4 modules
 ## Overview
 
 Not a module itself but a testing scaffold for CodeIgniter 4 modules,
-**module-tests** makes it easy to setup PHPUnit tests in your modules.
+**ModuleTests** makes it easy to setup PHPUnit tests in your modules.
 
 To read more on Unit Testing in CodeIgniter 4 visit the
 [User Guide](https://codeigniter4.github.io/userguide/testing/index.html).
@@ -74,3 +74,10 @@ in **build/logs/**.
 ## Code Coverage
 
 See the docs on [Code Coverage](docs/COVERAGE.md).
+
+## Project Testing
+
+**ModuleTests** is designed to be added to your modular library which will be included into
+other CodeIgniter 4 projects. If you are looking for a testing scaffold for applications
+built using CodeIgniter 4 as their core framework, check out
+[Codeigniter4Projects/ProjectTests](https://github.com/codeigniter4projects/project-tests).
