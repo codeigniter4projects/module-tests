@@ -17,9 +17,10 @@ $paths = new Config\Paths();
 define('APPPATH',       realpath($paths->appDirectory) . DIRECTORY_SEPARATOR);
 define('ROOTPATH',      realpath(APPPATH . '../') . DIRECTORY_SEPARATOR);
 define('FCPATH',        realpath(ROOTPATH . 'public') . DIRECTORY_SEPARATOR);
-define('SYSTEMPATH',    realpath($paths->systemDirectory) . DIRECTORY_SEPARATOR);
 define('WRITEPATH',     realpath($paths->writableDirectory) . DIRECTORY_SEPARATOR);
-define('SUPPORTPATH',   realpath(ROOTPATH . 'tests/_support') . DIRECTORY_SEPARATOR);
+define('SYSTEMPATH',    realpath($paths->systemDirectory) . DIRECTORY_SEPARATOR);
+define('CIPATH',        realpath(SYSTEMPATH . '../') . DIRECTORY_SEPARATOR);
+define('SUPPORTPATH',   realpath(CIPATH . 'tests/_support') . DIRECTORY_SEPARATOR);
 
 // Define necessary module test path constants
 define('MODULESUPPORTPATH', realpath(__DIR__) . DIRECTORY_SEPARATOR);

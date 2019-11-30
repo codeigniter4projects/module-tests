@@ -53,6 +53,23 @@ composer.lock
 Examples of **composer.json** and **.gitignore** are located in the [examples/](examples/)
 folder if you need a starting point.
 
+### Paths
+
+A number of framework and testing path are defined as constants during the
+[bootstrap process](src/tests/_support/bootstrap.php). These default to the assumed locations
+if you have a standard directory structure. If you move directories around you will need to
+review these paths and set them appropriately.
+
+* **APPPATH**: `$paths->appDirectory`
+* **ROOTPATH**: `APPPATH . '../'`
+* **FCPATH**: `ROOTPATH . 'public/'`
+* **WRITEPATH**: `$paths->writableDirectory`
+* **SYSTEMPATH**: `$paths->systemDirectory`
+* **CIPATH**: `SYSTEMPATH . '../`
+* **SUPPORTPATH**: `CIPATH . 'tests/_support/`
+* **PROJECTSUPPORTPATH**: *bootstrap.php directory*
+* **TESTPATH**: `PROJECTSUPPORTPATH . '../`
+
 ## Updating
 
 As this repo is updated with bugfixes and improvements you will want to update your
