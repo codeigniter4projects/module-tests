@@ -28,6 +28,15 @@ define('TESTPATH',          realpath(MODULESUPPORTPATH . '../') . DIRECTORY_SEPA
 define('MODULEPATH',        realpath(__DIR__ . '/../../') . DIRECTORY_SEPARATOR);
 define('COMPOSER_PATH',     MODULEPATH . 'vendor/autoload.php');
 
+// Let's see if an app/Common.php file exists
+if (file_exists(APPPATH . 'Common.php'))
+{
+	require_once APPPATH . 'Common.php';
+}
+
+// Require system/Common.php
+require_once SYSTEMPATH . 'Common.php';
+
 // Set environment values that would otherwise stop the framework from functioning during tests.
 if (! isset($_SERVER['app.baseURL']))
 {
