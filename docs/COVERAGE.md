@@ -5,13 +5,13 @@
 
 ## Overview
 
-**ci4-module-tests** comes preconfigured to handle code coverage in addition to the unit tests.
+**ModuleTests** comes preconfigured to handle code coverage in addition to the unit tests.
 You will need to have a code coverage driver installed to use this feature, such as
 [Xdebug](https://xdebug.org).
 
 ## Setup
 
-**ci4-module-tests** assumes your source code is in **src/**; if your code is somewhere else
+**ModuleTests** assumes your source code is in **src/**; if your code is somewhere else
 then you will need to modify the following line in your PHPUnit XML file:
 ```
 	<directory suffix=".php">./src</directory>
@@ -19,7 +19,7 @@ then you will need to modify the following line in your PHPUnit XML file:
 
 ## PHPUnit.xml
 
-**ci4-module-tests** includes a ready-to-use PHPUnit template in **phpunit.xml.dist**.
+**ModuleTests** includes a ready-to-use PHPUnit template in **phpunit.xml.dist**.
 Common practice is to create a local copy of this file as **phpunit.xml** and add any
 sensitive or environment info (like database connections). Prevent **phpunit.xml** from
 being tracked in your repo by adding it to **.gitignore**.
@@ -30,7 +30,7 @@ being tracked in your repo by adding it to **.gitignore**.
 
 In addition to the code source mentioned above, PHPUnit can be configured to exclude files
 that are not relevant to testing or would otherwise cause the coverage calculations to fail.
-**ci4-module-tests** starts with a few files common to CodeIgniter 4 but you may need to add
+**ModuleTests** starts with a few files common to CodeIgniter 4 but you may need to add
 your own:
 ```
 	<exclude>
