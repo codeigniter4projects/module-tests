@@ -34,6 +34,21 @@ if (! isset($_SERVER['app.baseURL']))
 	$_SERVER['app.baseURL'] = 'http://example.com';
 }
 
+// Let's see if an app/Common.php file exists
+if (file_exists(APPPATH . 'Common.php'))
+{
+	require_once APPPATH . 'Common.php';
+}
+
+// Require system/Common.php
+require_once SYSTEMPATH . 'Common.php';
+
+// Set environment values that would otherwise stop the framework from functioning during tests.
+if (! isset($_SERVER['app.baseURL']))
+{
+	$_SERVER['app.baseURL'] = 'http://example.com';
+}
+
 // Load necessary modules
 require_once APPPATH . 'Config/Autoload.php';
 require_once APPPATH . 'Config/Constants.php';
