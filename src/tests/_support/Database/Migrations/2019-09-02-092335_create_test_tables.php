@@ -4,6 +4,8 @@ use CodeIgniter\Database\Migration;
 
 class CreateTestTables extends Migration
 {
+	protected $DBGroup = 'tests';
+
 	public function up()
 	{
 		$fields = [
