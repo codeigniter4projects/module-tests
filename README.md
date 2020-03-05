@@ -1,3 +1,11 @@
+# DEPRECATED
+
+Note: This repo is deprecated as of the official release of CodeIgniter 4. Functionality,
+examples, and relevant docs have been merged into the main repo. See (for example):
+* <https://github.com/codeigniter4/CodeIgniter4/tree/develop/admin/module/tests>
+
+Existing modules should upgrade by merging the files from **admin/module/**
+
 # ModuleTests
 
 PHPUnit testing scaffold for CodeIgniter 4 modules
